@@ -1,0 +1,17 @@
+diff -aurN smpeg-0.4.4.orig/configure.in smpeg-0.4.4/configure.in
+--- smpeg-0.4.4.orig/configure.in	2001-04-24 21:25:39.000000000 +0200
++++ smpeg-0.4.4/configure.in	2007-02-16 23:59:11.000000000 +0100
+@@ -195,13 +195,6 @@
+ [  --enable-gtk-player     build a GTk sample SMPEG player [default=yes]],
+               , enable_gtk_player=yes)
+ have_gtk=no
+-if test x$enable_gtk_player = xyes; then
+-    AM_PATH_GTK(1.2.1, have_gtk=yes)
+-    if test x$have_gtk = xyes; then
+-        CFLAGS="$CFLAGS $GTK_CFLAGS"
+-    fi
+-    AC_SUBST(GTK_LIBS)
+-fi
+ AM_CONDITIONAL(HAVE_GTK, test x$have_gtk = xyes)
+ 
+ dnl See if we can build the Mesa player
