@@ -1,7 +1,7 @@
 Summary:	SDL MPEG Library
 Name:		smpeg
 Version:	0.4.4
-Release:	22
+Release:	23
 License:	LGPL
 Group:		Libraries
 # currently developed at http://icculus.org/smpeg/ but no release yet
@@ -92,6 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -113,7 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/smpeg-config
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
 %{_includedir}/*
 %{_aclocaldir}/*
 
